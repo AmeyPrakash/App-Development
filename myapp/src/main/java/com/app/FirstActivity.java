@@ -12,10 +12,10 @@ public class FirstActivity {
 
     public static void main(String[] args) {
 
-        // Load .env
+        
         Dotenv dotenv = Dotenv.load();
 
-        // Read values
+       
         String url = dotenv.get("DB_URL");
         String user = dotenv.get("DB_USER");
         String password = dotenv.get("DB_PASSWORD");
@@ -35,7 +35,7 @@ public class FirstActivity {
 
             String query = "INSERT INTO employee(name, salary) VALUES (?, ?)";
 
-            PreparedStatement ps = cn.prepareStatement(query);
+            PreparedStatement ps = cn.prepareStatement(query);   
 
             ps.setString(1, name);
             ps.setDouble(2, salary);
